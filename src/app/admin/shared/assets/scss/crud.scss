@@ -1,0 +1,140 @@
+.hv-100 {
+  height: 100vh;
+
+  .box-list {
+    background-color: var(--background-strong);
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .box-form {
+    background: var(--background);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+
+  .box-list,
+  .box-form {
+    padding-top: 30px;
+    overflow: hidden;
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      background-color: #fff;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+      background-color: #f2f2f2;
+    }
+  }
+}
+
+div[slot="header"] {
+  margin-bottom: 30px;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--font-default-low);
+  }
+}
+
+div[slot="list"] {
+  .box-item-list {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f5f5db;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    .box-icon-item {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--btn-green);
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .box-text {
+      cursor: pointer;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      width: 500px;
+
+      .text-main {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      .text-secondary {
+        font-size: 0.85rem;
+        font-weight: 400;
+        margin-bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+div[slot="form"] {
+  .header-form {
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--font-default-low);
+    }
+  }
+
+  .hint-invalid {
+    color: red;
+  }
+
+  .btn-save {
+    width: 100%;
+    background-color: var(--btn-strong);
+
+    span {
+      color: white;
+    }
+  }
+
+  .btn-cancel {
+    width: 100%;
+    background-color: var(--btn-low);
+
+    span {
+      color: var(--font-default);
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.box-main {
+  background-color: var(--background-strong);
+
+  .box-menu {
+    min-height: 100vh;
+    height: 100vh;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    background-color: var(--background);
+    padding: 0;
+  }
+
+  .box-content {
+    max-height: 100vh;
+    overflow: auto;
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      background-color: #fff;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+      background-color: #f2f2f2;
+    }
+  }
+}
+
+.not-authorized {
+  &.h-100 {
+    height: 100vh;
+  }
+
+  &.d-fcc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-logout {
+    cursor: pointer;
+  }
+}

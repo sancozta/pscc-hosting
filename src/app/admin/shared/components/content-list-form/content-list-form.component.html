@@ -1,0 +1,17 @@
+<div class="content-fluid">
+
+  <div class="row hv-100">
+
+    <div class="col box-list">
+      <ng-content select="[slot=header]"></ng-content>
+
+      <ng-content select="[slot=list]"></ng-content>
+    </div>
+
+    <div *ngIf="enableForm" class="col-3 box-form">
+      <ng-content select="[slot=form]"></ng-content>
+    </div>
+
+  </div>
+
+</div>

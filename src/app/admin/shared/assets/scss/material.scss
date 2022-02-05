@@ -1,0 +1,33 @@
+.box-form-login {
+  width: 100%;
+  padding: 20px;
+
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline .mat-input-element::placeholder {
+    color: white;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline .mat-form-field-label {
+    color: white;
+  }
+
+  .mat-form-field-empty.mat-form-field-label {
+    color: white;
+  }
+
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    color: white;
+  }
+
+  .mat-flat-button.mat-button-disabled.mat-button-disabled {
+    color: #38393a;
+    background: #9c9c9c;
+  }
+}
+
+textarea.mat-input-element {
+  line-height: 18px;
+}

@@ -1,0 +1,25 @@
+.p-relative {
+  position: relative;
+
+  .dropdown-open {
+    position: absolute;
+    display: none;
+    background: white;
+    border-radius: 5px;
+  }
+
+  &:hover {
+    .dropdown-open {
+      position: absolute;
+      display: block;
+
+      .dropdown-item {
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.navbar.navbar-expand-lg {
+  z-index: 8;
+}

@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+@import "./assets/scss/variables.scss";
+
+html,
+body {
+  height: 100%;
+}
+
+body *:not(i, mat-icon) {
+  margin: 0;
+  font-family: "Poppins", sans-serif !important;
+}
+
+// STYLES MODULE ADMIN
+app-login,
+app-dashboard {
+  @import "./app/admin/shared/assets/scss/admin.scss";
+}
+
+// STYLES MODULE PUBLIC
+app-public {
+  @import "./app/public/shared/assets/sass/public.scss";
+}
