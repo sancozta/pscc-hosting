@@ -6,21 +6,19 @@
 
 html,
 body {
-  height: 100%;
+    height: 100%;
 }
 
 body *:not(i, mat-icon) {
-  margin: 0;
-  font-family: "Poppins", sans-serif !important;
+    margin: 0;
+    font-family: "Poppins", sans-serif !important;
 }
 
-// STYLES MODULE ADMIN
-app-login,
-app-dashboard {
-  @import "./app/admin/shared/assets/scss/admin.scss";
+mat-login,
+mat-dashboard {
+    @import "./assets/scss/admin.scss";
 }
 
-// STYLES MODULE PUBLIC
-app-public {
-  @import "./app/public/shared/assets/sass/public.scss";
+mat-public {
+    background-color: darkgray;
 }

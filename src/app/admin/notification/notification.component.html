@@ -1,0 +1,45 @@
+<mat-content-list-form [enableForm]="false">
+
+  <div slot="header">
+
+    <div class="row">
+      <div class="col">
+        <h1>Enviar Notificações</h1>
+        <p>Envie notificações gerais para todos os seus usuários.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div slot="list">
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Título</mat-label>
+          <input required autofocus matInput placeholder="Digite seu Título..." id="title" [(ngModel)]="title">
+          <mat-hint class="hint-invalid" *ngIf="!title">Título é obrigatório.</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Mensagem</mat-label>
+          <textarea required [rows]="3" autofocus matInput placeholder="Digite seu Corpo da Mensagem..." id="body"
+            [(ngModel)]="body"></textarea>
+          <mat-hint class="hint-invalid" *ngIf="!body">Mensagem é obrigatória.</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-4 offset-4">
+        <button class="w-100" mat-stroked-button (click)="sendAll()">Enviar Para Todos</button>
+      </div>
+    </div>
+
+  </div>
+
+</mat-content-list-form>

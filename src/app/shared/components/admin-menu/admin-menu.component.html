@@ -1,0 +1,43 @@
+<div class="content-menu-slide">
+  <a class="box-profile">
+    <div class="profile-img">
+      <span>{{ getFisrtCharEmail(getName(user)) }}</span>
+    </div>
+    <div class="profile-text">
+      <span class="profile-text-title">{{ getName(user) }}</span>
+      <span class="profile-text-subtitle">{{ getEmail(user) }}</span>
+    </div>
+  </a>
+  <div class="box-menu-item box-items">
+    <ul>
+      <li *ngFor="let item of items">
+        <a routerLink="{{ item.routerLink }}" routerLinkActive="active">
+          <i class="{{ item.icon }}"></i>
+          <label>{{ item.label }}</label>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="box-menu-item box-sing-out">
+    <ul>
+      <li>
+        <a routerLink="/" routerLinkActive="active">
+          <i class="fas fa-external-link-alt"></i>
+          <label>Site</label>
+        </a>
+      </li>
+      <li>
+        <a (click)="navigate(['/admin/profile'])" routerLink="/admin/profile">
+          <i class="fas fa-user"></i>
+          <label>Meus Dados</label>
+        </a>
+      </li>
+      <li>
+        <a (click)="signout.emit()">
+          <i class="fas fa-sign-out-alt"></i>
+          <label>Sair</label>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

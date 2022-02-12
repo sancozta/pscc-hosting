@@ -1,21 +1,19 @@
-# Compiled output
+# SEE HTTP://HELP.GITHUB.COM/IGNORE-FILES/ FOR MORE ABOUT IGNORING FILES.
+
+# COMPILED OUTPUT
 /dist
 /tmp
 /out-tsc
-/.firebase
-
-# Only exists if Bazel was run
 /bazel-out
+/.angular
 
-# Dependencies
+# NODE
 /node_modules
+npm-debug.log
+yarn-error.log
 
-# Profiling files
-chrome-profiler-events*.json
-speed-measure-plugin*.json
-
-# IDEs and editors
-/.idea
+# IDES AND EDITORS
+.idea/
 .project
 .classpath
 .c9/
@@ -23,7 +21,7 @@ speed-measure-plugin*.json
 .settings/
 *.sublime-workspace
 
-# IDE - VSCode
+# VISUAL STUDIO CODE
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -31,16 +29,20 @@ speed-measure-plugin*.json
 !.vscode/extensions.json
 .history/*
 
-# Misc
-/.sass-cache
+# MISCELLANEOUS
+/.angular/cache
+.sass-cache/
 /connect.lock
 /coverage
 /libpeerconnection.log
-npm-debug.log
-yarn-error.log
 testem.log
 /typings
 
-# System Files
+# SYSTEM FILES
 .DS_Store
 Thumbs.db
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json

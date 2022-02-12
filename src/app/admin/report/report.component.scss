@@ -1,0 +1,73 @@
+a.card-dash {
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 30px;
+  background-color: var(--font-background);
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    transition: 0.5s all;
+    transform: scale(1.05);
+  }
+
+  i {
+    opacity: 0.7;
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    opacity: 0.7;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  h4 {
+    font-size: 1rem;
+    color: var(--font-default-low);
+    margin: 0;
+  }
+
+  &.purple {
+    i {
+      color: var(--bs-indigo);
+    }
+
+    h2 {
+      color: var(--bs-indigo);
+    }
+  }
+
+  &.green {
+    i {
+      color: var(--bs-green);
+    }
+
+    h2 {
+      color: var(--bs-green);
+    }
+  }
+
+  &.red {
+    i {
+      color: var(--bs-red);
+    }
+
+    h2 {
+      color: var(--bs-red);
+    }
+  }
+
+  &.yellow {
+    i {
+      color: var(--bs-yellow);
+    }
+
+    h2 {
+      color: var(--bs-yellow);
+    }
+  }
+}

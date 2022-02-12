@@ -1,0 +1,66 @@
+<mat-content-list-form [enableForm]="false">
+
+  <div slot="header">
+
+    <div class="row">
+      <div class="col">
+        <h1>Meus Dados</h1>
+        <p>Mantenha seus dados sempre atualizados.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div slot="list">
+
+    <div class="row" *ngIf="loading">
+      <div class="col text-center">
+        <i class="fas fa-spinner fa-3x fa-pulse"></i>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="!loading">
+      <div class="col">
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Nome</mat-label>
+              <input required autofocus matInput placeholder="Digite seu nome..." id="name" [(ngModel)]="user.name">
+              <mat-hint class="hint-invalid" *ngIf="!user.name">Nome é obrigatório.</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>CPF</mat-label>
+              <input required autofocus matInput placeholder="Digite seu nome..." id="cpf" [(ngModel)]="user.cpf">
+              <mat-hint class="hint-invalid" *ngIf="!user.cpf">Cpf é obrigatório.</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Telefone</mat-label>
+              <input required autofocus matInput placeholder="Digite seu nome..." id="phone" [(ngModel)]="user.phone">
+              <mat-hint class="hint-invalid" *ngIf="!user.phone">Telefone é obrigatório.</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-4 offset-4">
+            <button class="w-100" mat-stroked-button (click)="save()">Salvar</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</mat-content-list-form>

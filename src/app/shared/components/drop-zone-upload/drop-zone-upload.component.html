@@ -1,0 +1,22 @@
+<div class="dropzone" dropzone (hovered)="toggleHover($event)" (dropped)="onDrop($event)"
+  [ngClass]="{'hovering': isHovering}">
+  <h3>Solter as Imagens Aqui</h3>
+  <p>Drag and Drop a File</p>
+</div>
+
+<div class="row">
+  <div class="box-file col-4" *ngFor="let img of images">
+    <div class="box-image">
+      <img [defaultImage]="placeholder" [lazyLoad]="img.url">
+    </div>
+  
+    <div class="box-actions">
+      <a mat-button color="primary" class="mr-1" [href]="img.url" target="_blank" rel="noopener">Baixar</a>
+      <button mat-button color="primary" class="mr-1" (click)="remove(img)">Remover</button>
+    </div>
+  </div>
+</div>
+
+<div *ngFor="let file of files">
+  <upload-task-file [file]="file" (finalize)="onAdd($event)" (complete)="onRemove($event)"></upload-task-file>
+</div>

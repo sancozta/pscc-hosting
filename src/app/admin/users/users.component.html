@@ -1,0 +1,84 @@
+<mat-content-list-form [enableForm]="form">
+
+  <div slot="header">
+
+    <div class="row">
+      <div class="col">
+        <h1>Usuários</h1>
+        <p>Edite informações dos seus usuários para deixar tudo atualizado</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div slot="list">
+
+    <div class="row box-item-list" *ngFor="let item of list; let i = index">
+      <div class="col-auto d-fcc">
+        <div class="box-icon-item" (click)="editObject(item)" matTooltip="Editar Item">
+          <i class="fas fa-stream"></i>
+        </div>
+      </div>
+      <div class="col box-text" (click)="editObject(item)">
+        <p class="text-main">{{ item.name }}</p>
+        <p class="text-secondary">{{ item.email }}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div slot="form">
+
+    <div class="row header-form">
+      <div class="col">
+        <h1>Editar Item</h1>
+        <p>Utilize o formulário para realizar as edições necessárias!</p>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Nome</mat-label>
+          <input required autofocus matInput placeholder="Digite o nome..." id="name" [(ngModel)]="object.name">
+          <mat-hint class="hint-invalid" *ngIf="submitted && !object.email">Nome é obrigatório.</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Email</mat-label>
+          <input required autofocus matInput placeholder="Digite o email..." id="email" [(ngModel)]="object.email" [readonly]="true">
+          <mat-hint class="hint-invalid" *ngIf="submitted && !object.email">Email é obrigatório.</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Telefone</mat-label>
+          <input required autofocus matInput placeholder="Digite o telefone..." id="phone" [(ngModel)]="object.phone">
+          <mat-hint class="hint-invalid" *ngIf="submitted && !object.phone">Telefone é obrigatório.</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>CPF</mat-label>
+          <input required autofocus matInput placeholder="Digite o cpf..." id="cpf" [(ngModel)]="object.cpf">
+          <mat-hint class="hint-invalid" *ngIf="submitted && !object.cpf">Cpf é obrigatório.</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col">
+        <button class="btn-cancel" mat-flat-button (click)="hideForm()">Cancelar</button>
+      </div>
+      <div class="col">
+        <button class="btn-save" mat-flat-button (click)="saveObject()">Salvar</button>
+      </div>
+    </div>
+
+  </div>
+
+</mat-content-list-form>

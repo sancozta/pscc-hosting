@@ -1,0 +1,108 @@
+<mat-content-list-form [enableForm]="form">
+
+  <div slot="header">
+
+    <div class="row">
+      <div class="col">
+        <h1>Produtos</h1>
+        <p>Edite seus produtos para que possam ser apresentados no site principal</p>
+      </div>
+      <div class="col-auto">
+        <button (click)="openNew()" mat-icon-button matTooltip="Adicionar Novo Item">
+          <mat-icon>loupe</mat-icon>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div slot="list">
+
+    <div class="row box-item-list" *ngFor="let item of list; let i = index">
+      <div class="col-auto d-fcc">
+        <div class="box-icon-item" (click)="editObject(item)" matTooltip="Editar Item">
+          <i class="fas fa-stream"></i>
+        </div>
+      </div>
+      <div class="col box-text" (click)="editObject(item)">
+        <p class="text-main">{{ item.title }}</p>
+        <p class="text-secondary">{{ item.description }}</p>
+      </div>
+      <div class="col-auto d-fcc">
+        <button (click)="deleteObject(item)" mat-icon-button matTooltip="Remover Item" color="warn" class="ml-2">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div slot="form">
+
+    <div class="row header-form">
+      <div class="col">
+        <h1>Editar Item</h1>
+        <p>Utilize o formulário para realizar as edições necessárias!</p>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Título</mat-label>
+          <input required autofocus matInput placeholder="Digite o título..." id="title" [(ngModel)]="object.title">
+          <mat-hint class="hint-invalid" *ngIf="submitted && !object.title">Título é obrigatório.</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Descrição</mat-label>
+          <textarea required matInput rows="5" placeholder="Digite a descrição..." id="description"
+            [(ngModel)]="object.description"></textarea>
+          <mat-hint class="hint-invalid" *ngIf="submitted && !object.description">Descrição é obrigatório.</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Preço</mat-label>
+          <input required autofocus matInput placeholder="Digite o preço..." id="price" [(ngModel)]="object.price">
+          <mat-hint class="hint-invalid" *ngIf="submitted && !object.price">Preço é obrigatório.</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Categoria</mat-label>
+          <mat-select [(ngModel)]="object.category">
+            <mat-option *ngFor="let category of categorys" [value]="category.key">
+              {{category.title}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <drop-zone-upload [uid]="object.uid" [images]="object.images" (update)="updateImgs($event)">
+        </drop-zone-upload>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col">
+        <button class="btn-cancel" mat-flat-button (click)="hideForm()">Cancelar</button>
+      </div>
+      <div class="col">
+        <button class="btn-save" mat-flat-button (click)="saveObject()">Salvar</button>
+      </div>
+    </div>
+
+  </div>
+
+</mat-content-list-form>

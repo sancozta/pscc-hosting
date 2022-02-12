@@ -1,12 +1,12 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { FirebaseService } from '../shared/services/firebase.service';
-import { MenuModel } from '../shared/models/menu.model';
-import { User } from '../shared/models/user.model';
+import { FirebaseService } from '../../shared/services/firebase.service';
+import { MenuModel } from '../../shared/models/menu.model';
+import { User } from '../../shared/models/user.model';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'mat-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
@@ -55,14 +55,20 @@ export class DashboardComponent implements OnInit {
   ];
 
   ngOnInit() {
-    this.firebase.data.subscribe((u) => {
-      this.firebase.getDocUser(u.uid).subscribe((doc: User) => {
-        this.firebase.user = doc;
-        this.firebase.admin = doc.admin;
-        this.authorized = doc.admin;
-        this.loading = false;
+    if(this.firebase.data != null) {
+      this.firebase.data.subscribe((auth) => {
+        console.log(`Dash => Usuário Logado => `, auth);
+        this.firebase.getDocUser(auth ? auth.uid : '').subscribe((doc: User | undefined | null) => {
+          console.log('Dash => Usuário Firestore => ', doc);
+          if(doc) {
+            this.firebase.user = doc;
+            this.firebase.admin = doc.admin;
+            this.authorized = !!doc.admin;
+            this.loading = false;
+          }
+        });
       });
-    });
+    }
   }
 
   public navigate(commands: any[]): void {
@@ -71,6 +77,6 @@ export class DashboardComponent implements OnInit {
 
   logout() {
     this.firebase.logout();
-    this.router.navigate(['/admin/login']);
+    this.router.navigate(['/login']);
   }
 }
