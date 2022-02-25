@@ -14,6 +14,7 @@ import { AuthGuard } from './shared/services/auth.guard';
 import { NotfoundComponent } from './admin/notfound/notfound.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ChannelsComponent } from './pages/channels/channels.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'channels',
     component: ChannelsComponent,
+  },
+  {
+    path: 'privacy',
+    component: PrivacyComponent,
   },
   {
     path: 'admin',
